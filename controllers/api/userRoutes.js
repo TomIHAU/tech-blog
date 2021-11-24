@@ -1,41 +1,56 @@
 const router = require("express").Router();
 const { User } = require("../../models");
-const withAuth = require("../../utils/auth");
 
-////need to edit still
-
-router.get("/", (req, res) => {
+router.post("/", async (req, res) => {
   try {
-    const getComments = await User.findAll({});
-    res.json(getUsers);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+    const userData = await User.create(req.body);
 
-router.post("/", withAuth, async (req, res) => {
-  try {
-    const newUser = await User.create({
-      text: req.body.text,
-      post_id: req.body.post_id,
-      user_id: req.session.user_id,
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(userData);
     });
-    res.status(200).json(newUser);
   } catch (err) {
-    res.status(500).json(err);
+    res.status(400).json(err);
   }
 });
 
-router.delete("/:id", withAuth, (req, res) => {
+router.post("/login", async (req, res) => {
   try {
-    const deleteUser = await User.destroy({
+    const userData = await User.findOne({
       where: {
-        id: req.params.id,
+        name: req.body.name,
       },
     });
-    res.json(deleteUser);
+
+    const validPassword = await userData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: "Incorrect username or password, please try again" });
+      return;
+    }
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.json({ user: userData, message: "You are now logged in!" });
+    });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(400).json(err);
+  }
+});
+
+router.post("/logout", (req, res) => {
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
   }
 });
 
