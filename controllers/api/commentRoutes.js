@@ -2,14 +2,14 @@ const router = require("express").Router();
 const { Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-router.get("/", (req, res) => {
-  try {
-    const getComments = await Comment.findAll({});
-    res.json(getComments);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// router.get("/", (req, res) => {
+//   try {
+//     const getComments = await Comment.findAll({});
+//     res.json(getComments);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 router.post("/", withAuth, async (req, res) => {
   try {
@@ -24,17 +24,17 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
-router.delete("/:id", withAuth, (req, res) => {
-  try {
-    const deleteComment = await Comment.destroy({
-      where: {
-        id: req.params.id,
-      },
-    });
-    res.json(deleteComment);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// router.delete("/:id", withAuth, (req, res) => {
+//   try {
+//     const deleteComment = await Comment.destroy({
+//       where: {
+//         id: req.params.id,
+//       },
+//     });
+//     res.json(deleteComment);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;
