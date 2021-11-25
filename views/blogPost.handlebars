@@ -1,0 +1,31 @@
+<article class="infoCard">
+    <div >
+      <h2>
+        {{post.title}}
+      </h2>
+      <div>
+        Posted by {{post.User.username}} on {{format_date post.createdAt}}
+      </div>
+    </div>
+    <div class="cardBody">
+      {{post.text}}
+    </div>
+  </article>
+
+  {{#if post.Comments}}
+  {{#each post.Comments}}
+  <article class="commentCard">
+    <div>        
+        <div>
+            Comment by {{User.username}} on {{format_date createdAt}}
+        </div>    
+    </div>
+    <div class="commentBody">
+      {{text}}
+    </div>
+  </article>
+  {{/each}}
+  
+  {{/if}}
+
+  {{!-- new comment form here --}}

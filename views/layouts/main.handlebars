@@ -10,16 +10,17 @@
 
   <body>
     <header>
-        
-      {{#if logged_in}}
-      <a href="/dashboard">Dashboard</a>
-      <button id="logout">Logout</button>
-      <script src="/js/logout.js"></script>
-      {{else}}
-      <a href="/login">Login</a>
-      {{/if}}
+        <a href="/homepage">Home</a>
+        {{#if logged_in}}
+        <a href="/dashboard">Dashboard</a>
+        <button id="logout">Logout</button>
+        <script src="/js/logout.js"></script>
+        {{else}}
+        <a href="/login">Login</a>
+        <a href="/signup">Sign up</a>
+        {{/if}}
     </header>
-    {{{body}}}
+    {{{ body }}}
   </body>
 
 </html>
