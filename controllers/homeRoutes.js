@@ -4,7 +4,7 @@ const { Comment, Post, User } = require("../models");
 router.get("/", async (req, res) => {
   try {
     const postData = await Post.findAll({
-      include: [User, Comment],
+      include: [User],
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
@@ -21,7 +21,7 @@ router.get("/login", async (req, res) => {
       res.redirect("/");
       return;
     }
-    res.render("login", {});
+    res.render("login");
   } catch (err) {
     res.status(500).json(err);
   }
@@ -33,7 +33,7 @@ router.get("/signup", async (req, res) => {
       res.redirect("/");
       return;
     }
-    res.render("signup", {});
+    res.render("signup");
   } catch (err) {
     res.status(500).json(err);
   }
