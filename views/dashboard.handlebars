@@ -1,5 +1,4 @@
 <div>
-    
     <form class="create-form" id="createPost">
         <h2>Create a new post</h2>
             <div>
@@ -15,11 +14,12 @@
 </div>
 
 <script src="/js/createPost.js"></script>
-
+<h3>My Posts</h3>
 {{#if posts}}
 <div>
     {{#each posts as |post|}}
     <a href="/post/{{id}}"><span>{{title}} on {{format_date createdAt}}</span></a>
+    <a href="/edit/{{id}}"><span>edit this post</span></a>
     {{/each}}
 </div>
 {{/if}}

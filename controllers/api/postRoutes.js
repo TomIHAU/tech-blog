@@ -2,7 +2,23 @@ const router = require("express").Router();
 const { Post } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-//need to edit still
+router.put("/:id", withAuth, async (req, res) => {
+  try {
+    console.log(req.body);
+    const updatedPost = Post.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (!updatedPost) {
+      res.status(404).json({ message: "No post found with this id" });
+      return;
+    }
+    res.json(updatedPost);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.get("/", async (req, res) => {
   try {
