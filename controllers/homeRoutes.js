@@ -4,7 +4,7 @@ const { Comment, Post, User } = require("../models");
 router.get("/", async (req, res) => {
   try {
     const postData = await Post.findAll({
-      include: [User],
+      include: [{ model: User, attributes: ["username"] }],
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
@@ -21,7 +21,7 @@ router.get("/login", async (req, res) => {
       res.redirect("/");
       return;
     }
-    res.render("login");
+    res.render("login", { logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -33,7 +33,7 @@ router.get("/signup", async (req, res) => {
       res.redirect("/");
       return;
     }
-    res.render("signup");
+    res.render("signup", { logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -42,7 +42,7 @@ router.get("/signup", async (req, res) => {
 router.get("/post/:id", async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
-      include: [User, Comment],
+      include: [User, { model: Comment, include: [User] }, Comment],
     });
 
     const post = postData.get({ plain: true });

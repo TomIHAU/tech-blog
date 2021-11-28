@@ -4,7 +4,7 @@
         {{post.title}}
       </h2>
       <div>
-        Posted by {{post.User.username}} on {{format_date post.createdAt}}
+        Posted by {{post.user.username}} on {{format_date post.createdAt}}
       </div>
     </div>
     <div class="cardBody">
@@ -12,12 +12,12 @@
     </div>
   </article>
 
-  {{#if post.Comments}}
-  {{#each post.Comments}}
+  {{#if post.comments}}
+  {{#each post.comments}}
   <article class="commentCard">
     <div>        
         <div>
-            Comment by {{User.username}} on {{format_date createdAt}}
+            Comment by {{user.username}} on {{format_date createdAt}}
         </div>    
     </div>
     <div class="commentBody">
@@ -28,4 +28,13 @@
   
   {{/if}}
 
-  {{!-- new comment form here --}}
+  <form id="newComment">
+      <h3>Add new comment to this post</h3>
+      <div class="cardBody">
+        <label class="form-label" for="commentText">Comment</label>
+        <textarea name="commentText" id="commentText"></textarea>
+        <button type="submit" class="btn">Submit</button>
+      </div>
+  </form>
+
+  <script src="/js/addComment.js"></script>

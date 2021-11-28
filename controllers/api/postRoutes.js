@@ -4,7 +4,7 @@ const withAuth = require("../../utils/auth");
 
 //need to edit still
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const getPosts = await Post.findAll({});
   } catch (err) {
@@ -25,12 +25,11 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
-router.delete("/:id", withAuth, (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
   try {
     const deletePost = await Post.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
     res.json(deletePost);
