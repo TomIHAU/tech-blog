@@ -65,3 +65,45 @@ textarea {
   border-radius: 4px;
   resize: none;
 }
+
+.infoCard {
+  margin-left: 10%;
+}
+h2 a {
+  text-decoration: none;
+  color: black;
+}
+
+h2 a:hover {
+  color: aqua;
+}
+
+#login-form {
+  margin-left: 10%;
+}
+
+#username,
+#password {
+  width: 154px;
+  padding: 2px;
+  border: 1px solid #030303;
+  border-radius: 2px;
+  margin: 8px 10px;
+  box-sizing: border-box;
+}
+.create-form {
+  margin-left: 4%;
+}
+.myPosts {
+  margin-left: 4%;
+}
+
+.selectPost a {
+  text-decoration: none;
+}
+.editThis {
+  color: red;
+}
+.selectPost a:hover {
+  color: aqua;
+}

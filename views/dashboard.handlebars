@@ -14,12 +14,14 @@
 </div>
 
 <script src="/js/createPost.js"></script>
+<div class="myPosts">
 <h3>My Posts</h3>
 {{#if posts}}
-<div>
     {{#each posts as |post|}}
-    <a href="/post/{{id}}"><span>{{title}} on {{format_date createdAt}}</span></a>
-    <a href="/edit/{{id}}"><span>edit this post</span></a>
+    <div class="selectPost">
+        <a href="/post/{{id}}"><span>{{title}} on {{format_date createdAt}}</span></a>
+        <a href="/edit/{{id}}" class="editThis"><span>edit this post</span></a>
+    </div>
     {{/each}}
-</div>
 {{/if}}
+</div>
