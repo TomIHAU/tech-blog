@@ -45,16 +45,6 @@ input[type="submit"]:hover {
   background-color: #45a049;
 }
 
-input[type="text"],
-select {
-  width: 98%;
-  padding: 12px 20px;
-  margin: 8px 10px;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
 textarea {
   width: 98%;
   height: 100px;
@@ -78,23 +68,15 @@ h2 a:hover {
   color: aqua;
 }
 
-#login-form {
+#login-form,
+.signup-form {
   margin-left: 10%;
 }
 
-#username,
-#password {
-  width: 154px;
-  padding: 2px;
-  border: 1px solid #030303;
-  border-radius: 2px;
-  margin: 8px 10px;
-  box-sizing: border-box;
-}
-.create-form {
-  margin-left: 4%;
-}
-.myPosts {
+.myPosts,
+.create-form,
+#newComment,
+.edPost {
   margin-left: 4%;
 }
 
@@ -106,4 +88,12 @@ h2 a:hover {
 }
 .selectPost a:hover {
   color: aqua;
+}
+.PWinput {
+  width: 154px;
+  padding: 2px;
+  border: 1px solid #030303;
+  border-radius: 2px;
+  margin: 8px 10px;
+  box-sizing: border-box;
 }
