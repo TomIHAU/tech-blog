@@ -76,7 +76,8 @@ h2 a:hover {
 .myPosts,
 .create-form,
 #newComment,
-.edPost {
+.edPost,
+.commentCard {
   margin-left: 4%;
 }
 
