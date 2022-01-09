@@ -174,3 +174,22 @@ article.infoCard {
   border-radius: 4px;
   resize: none;
 }
+.myPosts h3 {
+  text-align: center;
+  margin: 0;
+}
+.myPosts {
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 20px;
+}
+.selectPost {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#signupPass,
+#password {
+  margin-left: 13px;
+}
