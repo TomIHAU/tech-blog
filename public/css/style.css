@@ -1,3 +1,7 @@
+:root {
+  --hovercolor: #cc5c11;
+}
+
 html,
 body {
   margin: 0;
@@ -8,15 +12,21 @@ header a {
   color: white;
 }
 header a:hover {
-  color: aqua;
+  color: var(--hovercolor);
 }
 header {
-  background-color: #2e0603;
+  background-color: #2e0636;
   color: white;
-  padding: 10px 40px;
+  padding: 18px 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  margin-bottom: 15px;
+  font-size: large;
 }
 
-button {
+.btn {
   background-color: #474545;
   border: none;
   color: white;
@@ -28,6 +38,9 @@ button {
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 5px;
+}
+.btn:hover {
+  color: var(--hovercolor);
 }
 
 input[type="submit"] {
@@ -42,7 +55,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: var(--hovercolor);
 }
 
 textarea {
@@ -62,9 +75,11 @@ h2 a {
 }
 
 h2 a:hover {
-  color: aqua;
+  color: var(--hovercolor);
 }
-
+h3 {
+  margin: 18px;
+}
 #login-form,
 .signup-form {
   margin-left: 10%;
@@ -74,7 +89,7 @@ h2 a:hover {
 .create-form,
 #newComment,
 .edPost {
-  margin-left: 4%;
+  margin: 0 4%;
 }
 
 .selectPost a {
@@ -84,7 +99,7 @@ h2 a:hover {
   color: red;
 }
 .selectPost a:hover {
-  color: aqua;
+  color: var(--hovercolor);
 }
 .PWinput {
   width: 154px;
@@ -94,9 +109,16 @@ h2 a:hover {
   margin: 8px 10px;
   box-sizing: border-box;
 }
-
+h2 {
+  margin: 3px;
+  text-align: center;
+}
+.owner {
+  text-align: center;
+  font-size: 14px;
+}
 article.infoCard {
-  background-color: lightgrey;
+  background-color: #e9e5e5;
   padding: 10px;
   border-radius: 8px;
   border: 1px solid black;
@@ -108,4 +130,26 @@ article.infoCard {
   padding: 10px;
   border-radius: 8px;
   border: 1px solid black;
+}
+
+#logout {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  float: right;
+  color: white;
+}
+.cardBody {
+  background-color: white;
+  border: 1px solid black;
+  padding: 3px;
+  border-radius: 5px;
+  margin: 2px;
+}
+#logout:hover {
+  color: var(--hovercolor);
 }

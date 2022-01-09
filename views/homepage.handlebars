@@ -5,12 +5,12 @@
       <h2>
         <a href="/post/{{id}}">{{title}}</a>
       </h2>
-      <div>
+      <div class="owner">
         Posted by {{user.username}} on {{format_date createdAt}}
       </div>
     </div>
     <div class="cardBody">
-      {{!-- {{text}} --}}
+      {{text}}
     </div>
   </article>
   {{/each}}

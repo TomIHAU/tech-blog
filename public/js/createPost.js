@@ -17,7 +17,9 @@ const create = async (event) => {
         alert(response.statusText);
       }
     }
-  } catch {}
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 document.querySelector("#createPost").addEventListener("submit", create);
