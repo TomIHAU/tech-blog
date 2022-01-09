@@ -62,7 +62,7 @@ textarea {
   width: 98%;
   height: 100px;
   padding: 12px 20px;
-  margin: 8px 10px;
+  margin: 8px;
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -77,8 +77,11 @@ h2 a {
 h2 a:hover {
   color: var(--hovercolor);
 }
-h3 {
-  margin: 18px;
+.cardBody h3 {
+  margin: 8px;
+}
+.cardBody .btn {
+  margin: 8px;
 }
 #login-form,
 .signup-form {
@@ -89,7 +92,7 @@ h3 {
 .create-form,
 #newComment,
 .edPost {
-  margin: 0 4%;
+  margin: 0 6%;
 }
 
 .selectPost a {
@@ -122,14 +125,17 @@ article.infoCard {
   padding: 10px;
   border-radius: 8px;
   border: 1px solid black;
-  margin: 10px 8% 0;
+  margin: 10px 6% 20px;
 }
 
 .commentCard {
-  margin: 3px 8% 0;
-  padding: 10px;
+  margin: 3px 8%;
+  padding: 8px;
   border-radius: 8px;
   border: 1px solid black;
+}
+.commentUser {
+  text-align: end;
 }
 
 #logout {
@@ -148,8 +154,23 @@ article.infoCard {
   border: 1px solid black;
   padding: 3px;
   border-radius: 5px;
-  margin: 2px;
 }
 #logout:hover {
   color: var(--hovercolor);
+}
+.titleCreate {
+  text-align: center;
+  margin-top: 13px;
+}
+.textCreate {
+  margin-left: 10px;
+}
+
+#title {
+  padding: 9px;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
 }

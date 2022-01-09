@@ -14,12 +14,10 @@
   
   {{#if post.comments}}
   {{#each post.comments}}
-  <article class="commentCard">
-    <div>        
-        <div>
-            Comment by {{user.username}} on {{format_date createdAt}}
-        </div>    
-    </div>
+  <article class="commentCard">      
+      <div class="commentUser">
+          Comment by <b>{{user.username}}</b> on {{format_date createdAt}}
+      </div>      
     <div class="commentBody">
       {{text}}
     </div>
@@ -28,9 +26,9 @@
   
   {{/if}}
 
-  <form id="newComment">
-      <h3>Add new comment to this post</h3>
-      <div class="cardBody">        
+  <form id="newComment">      
+      <div class="cardBody">
+        <h3>Add new comment to this post</h3>       
         <textarea name="commentText" id="commentText"></textarea>
         <button type="submit" class="btn">Submit</button>
       </div>
