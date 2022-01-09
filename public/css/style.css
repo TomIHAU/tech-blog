@@ -56,9 +56,6 @@ textarea {
   resize: none;
 }
 
-.infoCard {
-  margin-left: 10%;
-}
 h2 a {
   text-decoration: none;
   color: black;
@@ -76,8 +73,7 @@ h2 a:hover {
 .myPosts,
 .create-form,
 #newComment,
-.edPost,
-.commentCard {
+.edPost {
   margin-left: 4%;
 }
 
@@ -97,4 +93,19 @@ h2 a:hover {
   border-radius: 2px;
   margin: 8px 10px;
   box-sizing: border-box;
+}
+
+article.infoCard {
+  background-color: lightgrey;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid black;
+  margin: 10px 8% 0;
+}
+
+.commentCard {
+  margin: 3px 8% 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid black;
 }
