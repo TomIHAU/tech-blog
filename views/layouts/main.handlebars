@@ -10,17 +10,19 @@
 
   <body>
     <header>
-        <a href="/">Home</a>
-        {{#if logged_in}}
-        <a href="/dashboard">Dashboard</a>
-        <button id="logout">Logout</button>
-        <script src="/js/logout.js"></script>
-        {{else}}
-        <a href="/login">Login</a>
-        <a href="/signup">Sign up</a>
-        {{/if}}
+      <h1>Tech Blogging</h1>
+      <nav>
+          <a href="/">Home</a>
+          {{#if logged_in}}
+          <a href="/dashboard">Dashboard</a>
+          <button id="logout">Logout</button>
+          <script src="/js/logout.js"></script>
+          {{else}}
+          <a href="/login">Login</a>
+          <a href="/signup">Sign up</a>
+          {{/if}}
+      </nav>
     </header>
-    
     {{{ body }}}
      
   </body>

@@ -7,15 +7,25 @@ body {
   margin: 0;
   height: 100%;
 }
-header a {
-  text-decoration: auto;
-  color: white;
-}
-header a:hover {
-  color: var(--hovercolor);
+h1 {
+  margin: 0;
 }
 header {
   background-color: #2e0636;
+}
+header h1 {
+  text-align: center;
+  padding: 10px 0 0;
+  color: #a5db11;
+}
+nav a {
+  text-decoration: auto;
+  color: white;
+}
+nav a:hover {
+  color: var(--hovercolor);
+}
+nav {
   color: white;
   padding: 18px 40px;
   display: flex;
