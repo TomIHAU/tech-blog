@@ -13,4 +13,4 @@ using a database for saving and retrieving blog comments stored in a mySQL datab
 
 ## Screenshot
 
-![image](https://user-images.githubusercontent.com/88224502/143856159-a28ca0b8-0fb8-4947-9ff7-3d7743e90a56.png)
+![image](https://user-images.githubusercontent.com/88224502/149641208-c2c8ea3f-f146-45a7-9f02-e85b0c1ed34a.png)
